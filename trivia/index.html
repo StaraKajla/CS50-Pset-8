@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                const form = document.querySelector('#triviaQ1');
+                const correct = document.querySelector('#opt2');
+                let reply = document.querySelector('#triviaA1')
+                let currentButton;
+
+                form&&form.addEventListener('click', (e)=>{
+                    if (e.target.nodeName === 'BUTTON'){
+                        e.preventDefault();
+                        if (currentButton){
+                            currentButton.style.backgroundColor = '';
+                        }
+                        currentButton = e.target;
+                        if (e.target === correct){
+                            e.target.style.backgroundColor = 'green';
+                            reply.textContent = 'Correct!';
+                        }
+                        else{
+                            e.target.style.backgroundColor = 'red';
+                            reply.textContent = 'Incorrect!';
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            function checkAnsw()
+            {
+                let reply = document.getElementById("triviaA2")
+                const correct = 'peter';
+                const answer = document.getElementById("triviaQ2");
+                const btn = document.getElementById("triviaQ2btn");
+
+                if (answer.value.toLowerCase() === correct){
+                    console.log('Correct!');
+                    answer.style.backgroundColor = 'green';
+                    reply.textContent = 'Correct!';
+                }
+                else{
+                    console.log('Incorrect!')
+                    answer.style.backgroundColor = 'red';
+                    reply.textContent = 'Incorrect!';
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    What ten letter word starts with gas?
+                </h3>
+                <div id="triviaA1"></div>
+                <form id="triviaQ1">
+                    <button id="opt1">Retirement</button>
+                    <button id="opt2">Automobile</button>
+                    <button id="opt3">Aberration</button>
+                    <button id="opt4">Television</button>
+                </form>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of the main character in a series called 'Family Guy'?</h3>
+                <p id="triviaA2"></p>
+                <form onsubmit="checkAnsw(); return false;">
+                    <input id="triviaQ2" type="text">
+                    <button type="submit" id="triviaQ2btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

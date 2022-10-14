@@ -1,0 +1,41 @@
+body {
+  background-image: url('https://cdn.shopify.com/s/files/1/0070/0687/9859/files/blanklogoimage_8f7bea01-a1ef-49a3-92e1-0bf37d10c0c2_2048x.jpg?v=1630590234');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+img {
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+  }
+
+.center {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+.welcome {
+    background-image: url(bg1.jpg);
+    background-size: cover;
+    text-align: center;
+    flex: 1;
+    width: 100%;
+    height: 400px;
+    opacity: 0.8;
+}
+
+.importedPicture{
+  width: 95%;
+  height: auto;
+}
+
+#profilePicture{
+    width: 150px;
+}
+
